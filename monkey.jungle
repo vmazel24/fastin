@@ -1,0 +1,12 @@
+# --- fastin-app/monkey.jungle ------------------
+# ❶ Fichier manifeste obligatoire
+project.manifest   = manifest.xml
+# ❷ Code de l’app
+sourcePath         = source
+# ❸ On ajoute la lib
+sourcePath         = $(sourcePath);../fastin-lib/source/
+# ❹ Icônes, layouts, strings…
+resourcePath       = resources
+
+# (plus tard, quand tu auras empaqueté la barrel)
+# require fastin-lib:1.0.0               # 1.0.0 = version de ta lib
