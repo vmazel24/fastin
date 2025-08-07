@@ -3,7 +3,7 @@ module Fast {
     using Toybox.Lang;
     class FastinSession {
         var _start as Lang.Number;
-        var _stop as Lang.Number;
+        var _stop as Lang.Number or Null;
         function initialize() {
             _start = Time.now().value();
             _stop = null;

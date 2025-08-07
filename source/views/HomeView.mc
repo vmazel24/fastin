@@ -22,7 +22,11 @@ module Views {
 
         function onUpdate(dc as G.Dc) {
             dc.clear();
-            var s = mgr.getSessions().size() > 0 ? mgr.getSessions()[-1] : null;
+            var sessions as [FastinSession] = mgr.getSessions();
+            var s as FastinSession or Null = null;
+            if (sessions.size() > 0) {
+                s = sessions.get(sessions.size() - 1);
+            }
             if (s != null && s.isActive()) {
                 dc.drawText(dc.getWidth()/2, dc.getHeight()/2, G.FONT_LARGE, prettyDur(s.duration()), G.TEXT_JUSTIFY_CENTER);
             } else {
@@ -32,7 +36,11 @@ module Views {
 
         function onKey(evt) {
             if (evt.getKey() == Ui.KEY_ENTER) {
-                var s = mgr.getSessions().size() > 0 ? mgr.getSessions()[-1] : null;
+                var sessions as [FastinSession] = mgr.getSessions();
+                var s as FastinSession or Null = null;
+                if (sessions.size() > 0) {
+                    s = sessions.get(sessions.size() - 1);
+                }
                 if (s != null && s.isActive()) {
                     mgr.stopFast();
                 } else {
