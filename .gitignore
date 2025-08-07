@@ -1,0 +1,63 @@
+################################################################################
+#  Connect IQ / Monkey C – .gitignore                                          #
+#  Conçu pour :                                                                #
+#    • projets VS Code (extension Monkey C)                                    #
+#    • appli + librairie (.barrel)                                             #
+################################################################################
+
+# ---------------------------------------------------------------------------
+# 1. Dossiers et artefacts de compilation (monkeyc / barrelbuild)
+# ---------------------------------------------------------------------------
+bin/                  # .prg, .mir, .rez, .barrel, logs   :contentReference[oaicite:3]{index=3}
+rez/                  # ressources compilées (.rimg, etc.)
+build/                  # dossier de build personnalisé
+*.prg                   # exécutables Connect IQ
+*.barrel               # librairies empaquetées
+*.mir                   # MIR files (map IR)                :contentReference[oaicite:4]{index=4}
+
+# ---------------------------------------------------------------------------
+# 2. Fichiers temporaires du simulateur / SDK
+# ---------------------------------------------------------------------------
+# Cache et traces du simulateur Connect IQ
+*.log
+*.tmp
+simulator.cfg
+# Fichiers de profil générés (.prof, .pdb) éventuels
+*.prof
+*.pdb
+
+# ---------------------------------------------------------------------------
+# 3. Paramètres et clés sensibles
+# ---------------------------------------------------------------------------
+developer_key.der       # clé privée pour signer les .prg  :contentReference[oaicite:5]{index=5}
+*.crt
+*.pem
+
+# ---------------------------------------------------------------------------
+# 4. Configuration IDE / éditeurs
+# ---------------------------------------------------------------------------
+.vscode/                # réglages locaux VS Code           :contentReference[oaicite:6]{index=6}
+.idea/                  # JetBrains IDEs
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# ---------------------------------------------------------------------------
+# 5. OS / outils divers
+# ---------------------------------------------------------------------------
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+desktop.ini
+# Linux
+*~
+
+# ---------------------------------------------------------------------------
+# 6. Archives, sauvegardes et exports
+# ---------------------------------------------------------------------------
+*.zip
+*.tar.gz
+*.tgz
+*.bak
+*.old
