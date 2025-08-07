@@ -7,7 +7,7 @@ module Fast {
             _sessions = [];
         }
         function getSessions() { return _sessions; }
-        function startFast(offset as Number) {
+        function startFast(offset as Lang.Number) {
             _sessions.add(new FastinSession());
         }
         function stopFast() {

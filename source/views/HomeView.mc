@@ -13,7 +13,7 @@ module Views {
             mgr = m;
         }
 
-        function prettyDur(dur as Number) as String {
+        function prettyDur(dur as Lang.Number) as Lang.String {
             var hours = (dur / 3600).toNumber();
             var minutes = ((dur % 3600) / 60).toNumber();
             var seconds = (dur % 60).toNumber();
